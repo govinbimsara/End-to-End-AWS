@@ -1,6 +1,10 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {},
+  "features": {
+    "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+      "installCudnn": true
+    }
+  },
   "postCreateCommand": "conda env create -f conda.yml && conda activate venv && pip install -r requirements.txt",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
