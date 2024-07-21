@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template # type: ignore
 import numpy as np
 import pandas as pd
 
