@@ -1,4 +1,4 @@
-#For deploying through AWS ELASTIC BEANSTALK
+#For deploying through AWS ELASTIC BEANSTALK, delete app.py before deplying otherwise an error might occur
 
 from flask import Flask,request,render_template
 import numpy as np
