@@ -1,7 +1,7 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {},
-  "postCreateCommand": "conda create -n myenv python=3.8.0 -y && echo 'conda activate myenv' >> ~/.bashrc && conda run -n myenv pip install --upgrade pip && conda run -n myenv pip install -r requirements.txt",
+  "postCreateCommand": "conda init bash && source ~/.bashrc && conda create -n venv python=3.8.0 -y && echo 'conda activate venv' >> ~/.bashrc && source ~/.bashrc && conda run -n venv pip install --upgrade pip && conda run -n venv pip install -r requirements.txt",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
   },
