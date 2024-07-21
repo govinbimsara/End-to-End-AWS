@@ -1,7 +1,11 @@
 {
-  "name": "Python 3",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "name": "Python 3 with Conda",
   "image": "mcr.microsoft.com/devcontainers/python:0-3.8",
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "pip3 install --user -r requirements.txt"
+  "postCreateCommand": "conda create -n myenv python=3.8.0 -y && echo 'conda activate myenv' >> ~/.bashrc && conda run -n myenv pip install --upgrade pip && conda run -n myenv pip install -r requirements.txt",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "ms-python.python"
+  ]
 }
