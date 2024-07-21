@@ -1,11 +1,15 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {},
-  "postCreateCommand": "conda init bash && source ~/.bashrc && conda create -n venv python=3.8.0 -y && echo 'conda activate venv' >> ~/.bashrc && source ~/.bashrc && conda run -n venv pip install --upgrade pip && conda run -n venv pip install -r requirements.txt",
+  "postCreateCommand": "conda env create -f conda.yml && conda activate venv && pip install -r requirements.txt",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": [
     "ms-python.python"
-  ]
+  ],
+  "remoteEnv": {
+    "PYTHONPATH": "/workspaces/End-to-End-AWS"
+  },
+  "postStartCommand": "conda activate venv"
 }
